@@ -74,10 +74,6 @@ func getProductReviews(name string) (*ProductReviews, error) {
 	}
 
 	reviews := make([]*Review, 0)
-	reviews = append(reviews, &Review{
-		Text: "test",
-		Date: "test",
-	})
 	// we synchronize reviews processing with a channel, as we scrape reviews from multiple pages in parallel
 	reviewsChan := make(chan *Review)
 	quitChan := make(chan struct{})
